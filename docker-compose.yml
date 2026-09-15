@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  rover_sim:
+    build:
+      # Set the current directory . as the root build context
+      context: .
+
+      dockerfile: docker/Dockerfile
+    
+    container_name: space_rover_container
+    
+    # Creates a live two-way sync between your host project folder 
+    # and the workspace inside the container
+    volumes:
+      - ./ros2_ws:/workspace/ros2_ws
+    
+    environment:
+      # Connects the container's GUI output to your host display (via WSLg)
+      - DISPLAY=${DISPLAY}
+      # Disables shared memory extensions to prevent Qt/Gazebo rendering crashes
+      - QT_X11_NO_MITSHM=1
+
+    # Passes the host GPU direct rendering hardware straight into the container
+    devices:
+      - /dev/dri::/dev/dri
+    command: bash
