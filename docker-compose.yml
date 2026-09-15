@@ -8,6 +8,8 @@ services:
     
     container_name: space_rover_container
     
+    command: sleep infinity
+
     # Creates a live two-way sync between your host project folder 
     # and the workspace inside the container
     volumes:
@@ -21,5 +23,4 @@ services:
 
     # Passes the host GPU direct rendering hardware straight into the container
     #devices:
-      #- /dev/dri::/dev/dri
-    command: bash
+      #- /dev/dri:/dev/dri
