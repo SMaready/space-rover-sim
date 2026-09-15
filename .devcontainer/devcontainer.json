@@ -1,0 +1,16 @@
+{
+    "name": "Space Rover ROS2 Simulation",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "rover_sim",
+    "workspaceFolder": "/workspace/ros2_ws",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-iot.vscode-ros",
+                "ms-vscode.cpptools",
+                "ms-python.python"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}

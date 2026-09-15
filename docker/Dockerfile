@@ -1,6 +1,6 @@
 # Installs Ubuntu 22.04 preloaded with ROS2 Humble Hawksbill
 # and all the dev tools like Gazebo
-FROM osrf/ros::humble-desktop-full
+FROM osrf/ros:humble-desktop-full
 
 # Install handy dev tools
 RUN apt-get update && apt-get install -y \
